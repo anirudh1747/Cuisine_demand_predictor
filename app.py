@@ -6,7 +6,11 @@ model = pickle.load(open('model.pkl','rb'))
 
 ll=[]
 
-@app.route('/', methods = ['GET','POST'])
+@app.route('/')
+def index():
+	return render_template('index.html')
+
+@app.route('/predict', methods = ['GET','POST'])
 def index():
     if request.method=='POST':
         ind=request.form                  # returns an immutable dictionary
