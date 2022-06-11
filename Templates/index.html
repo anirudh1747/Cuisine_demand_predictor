@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="model.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- semantic ui cdn -->
+    <!-- <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"> -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css"></link>
+
+
+      <!-- animate.style cdn -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+      <style>
+#one{
+    background-color: #1B1C1D;
+    /* height: 720px; */
+}
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger!important;
+    
+}
+
+.container-fluid{
+    /* padding: 2% 15% 10%; */
+    padding-bottom: 30px;
+    padding-top: 30px;
+    
+}
+.navbar-brand{
+    font: 20px;
+    font-weight: bold;
+    margin-left: 180px;
+}
+
+.health{
+    width: 5%;
+}
+.navbar{
+    padding: 0 0 4rem;
+}
+.nav-item{
+    padding: 0 15px;
+    border-bottom: 2px solid transparent;
+    color: white;
+}
+.nav-item:hover {
+    border-bottom: 2px solid white;
+  }
+.nav-link{
+    font-size: 17px;
+    font-weight: 600;
+}
+.navbar-collapse{
+    margin-right: 150px;
+}
+.topic{
+    font-size: 80px;
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+.line{
+    color: white;
+    width: 50%;
+    font-size: 30px;
+    position: absolute;
+    top: 47%;
+    left: 25%;
+    text-align: center;
+}
+.btn-content{
+    width: 200px;
+    height: 50px;
+    outline: none;
+    border-radius: 5px;
+    background-color: #2185D0;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    top: 62%;
+    left: 43%;
+    cursor: pointer;
+    transition: transform .2s;
+}
+.btn-content:hover {
+    transform: scale(1.2); 
+  }
+.arrow{
+    width:10%;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+#two{
+    width: 100%;
+    height: 1000px;
+    background-color: #1B1C1D;
+}
+.skill-row{
+    width: 73%;
+    margin: 100px auto;
+    text-align: left;
+    line-height: 2;
+}
+.katana{
+    float: left;
+    margin-right: 20px;
+}
+.sake{
+    float: right;
+    margin-left: 20px;
+}
+p,h3{
+    color: white;
+}
+.doc-head{
+    margin-left: 210px;
+    margin-top:50px;
+    font-family: Rubik;
+}
+
+
+/* navbar css */
+
+.field{
+    width: 300px;
+    margin-left: 190px!important;
+}
+.doctor-state{
+    font-size: 20px;
+    font-weight: 400;
+    color: #1B1C1D;
+}
+label{
+    margin-right: 20px;
+}
+
+.ui-d, .ui-n, .ui-p{
+    margin: 30px;
+    margin-left: 190px;
+}
+
+.form-d,.form-n,.form-p{
+    margin-left: 20px;
+}
+/* .phc-d{
+    
+} */
+
+.nurse-head{
+    margin-left: 500px;
+    margin-top:50px;
+    font-family: Rubik;
+}
+.attributes{
+    display: flex;
+    flex: 0.7;
+    flex-wrap: wrap;
+    flex-basis:300px ;
+}
+
+
+.doctor{
+    width: fit-content;
+}
+
+.nurse{
+    width: fit-content;
+}
+
+.pharmacist{
+    width: fit-content;
+     margin-left: 300px; 
+}
+
+label{
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+	<form action="\" method="post">
+		<div class="doctor">
+	      <h1 class="doc-head">Enter Your Inputs Here</h1>
+	        <div class="ui form form-d">
+	            <div class="field">
+	              <label class="doctor-state">Online Order</label>
+	              <select class="ui search dropdown"  name="online_order">
+	              	<option value="">Select status(Yes/No)</option>
+	              	<option value="0">No</option>
+					<option value="1">Yes</option>
+				</select>
+			</div>
+			<div class="ui form form-d">
+	            <div class="field">
+	              <label class="doctor-state">Book Table</label>
+	              <select class="ui search dropdown"  name="book_table">
+	              	<option value="">Select status(Yes/No)</option>
+	              	<option value="0">No</option>
+					<option value="1">Yes</option>
+				</select>
+			</div>
+	            <div class="field">
+	              <label class="doctor-state">Location</label>
+	              <select class="ui search dropdown"  name="location">
+	              	<option value="">Select location</option>
+	              	<option value="0">BTM</option>
+					<option value="1">Banashankari</option>
+					<option value="2">Banaswadi</option>
+					<option value="3">Bannerghatta Road</option>
+					<option value="4">Basavanagudi</option>
+					<option value="5">Basaveshwara Nagar</option>
+					<option value="6">Bellandur</option>
+					<option value="7">Bommanahalli</option>
+					<option value="8">Brigade Road</option>
+					<option value="9">Brookefield</option>
+					<option value="10">CV Raman Nagar</option>
+					<option value="11">Central Bangalore</option>
+					<option value="12">Church Street</option>
+					<option value="13">City Market</option>
+					<option value="14">Commercial Street</option>
+					<option value="15">Cunningham Road</option>
+					<option value="16">Domlur</option>
+					<option value="17">East Bangalore</option>
+					<option value="18">Ejipura</option>
+					<option value="19">Electronic City</option>
+					<option value="20">Frazer Town</option>
+					<option value="21">HBR Layout</option>
+					<option value="22">HSR</option>
+					<option value="23">Hebbal</option>
+					<option value="24">Hennur</option>
+					<option value="25">Hosur Road</option>
+					<option value="26">ITPL Main Road, Whitefield</option>
+					<option value="27">Indiranagar</option>
+					<option value="28">Infantry Road</option>
+					<option value="29">JP Nagar</option>
+					<option value="30">Jalahalli</option>
+					<option value="31">Jayanagar</option>
+					<option value="32">Jeevan Bhima Nagar</option>
+					<option value="33">KR Puram</option>
+					<option value="34">Kaggadasapura</option>
+					<option value="35">Kalyan Nagar</option>
+					<option value="36">Kammanahalli</option>
+					<option value="37">Kanakapura Road</option>
+					<option value="38">Kengeri</option>
+					<option value="39">Koramangala</option>
+					<option value="40">Koramangala 1st Block</option>
+					<option value="41">Koramangala 2nd Block</option>
+					<option value="42">Koramangala 3rd Block</option>
+					<option value="43">Koramangala 4th Block</option>
+					<option value="44">Koramangala 5th Block</option>
+					<option value="45">Koramangala 6th Block</option>
+					<option value="46">Koramangala 7th Block</option>
+					<option value="47">Koramangala 8th Block</option>
+					<option value="48">Kumaraswamy Layout</option>
+					<option value="49">Langford Town</option>
+					<option value="50">Lavelle Road</option>
+					<option value="51">MG Road</option>
+					<option value="52">Magadi Road</option>
+					<option value="53">Majestic</option>
+					<option value="54">Malleshwaram</option>
+					<option value="55">Marathahalli</option>
+					<option value="56">Mysore Road</option>
+					<option value="57">Nagarbhavi</option>
+					<option value="58">Nagawara</option>
+					<option value="59">New BEL Road</option>
+					<option value="60">North Bangalore</option>
+					<option value="61">Old Airport Road</option>
+					<option value="62">Old Madras Road</option>
+					<option value="63">Peenya</option>
+					<option value="64">RT Nagar</option>
+					<option value="65">Race Course Road</option>
+					<option value="66">Rajajinagar</option>
+					<option value="67">Rajarajeshwari Nagar</option>
+					<option value="68">Rammurthy Nagar</option>
+					<option value="69">Residency Road</option>
+					<option value="70">Richmond Road</option>
+					<option value="71">Sadashiv Nagar</option>
+					<option value="72">Sahakara Nagar</option>
+					<option value="73">Sanjay Nagar</option>
+					<option value="74">Sankey Road</option>
+					<option value="75">Sarjapur Road</option>
+					<option value="76">Seshadripuram</option>
+					<option value="77">Shanti Nagar</option>
+					<option value="78">Shivajinagar</option>
+					<option value="79">South Bangalore</option>
+					<option value="80">St. Marks Road</option>
+					<option value="81">Thippasandra</option>
+					<option value="82">Ulsoor</option>
+					<option value="83">Uttarahalli</option>
+					<option value="84">Varthur Main Road, Whitefield</option>
+					<option value="85">Vasanth Nagar</option>
+					<option value="86">Vijay Nagar</option>
+					<option value="87">West Bangalore</option>
+					<option value="88">Whitefield</option>
+					<option value="89">Wilson Garden</option>
+					<option value="90">Yelahanka</option>
+					<option value="91">Yeshwantpur</option>
+				</select>
+			</div>
+			<div class="field">
+	              <label class="doctor-state">Book Table</label>
+	              <select class="ui search dropdown"  name="book_table">
+	              	<option value="">Select status(Yes/No)</option>
+	              	<option value="0">No</option>
+					<option value="1">Yes</option>
+				</select>
+			</div>
+            <div class="field">
+              <label class="doctor-state">Rest Type</label>
+              <select class="ui search dropdown"  name="rest_type">
+              	<option value="">Select rest type</option>
+              	<option value="0">Bakery</option>
+				<option value="1">Bakery, Beverage Shop</option>
+				<option value="2">Bakery, Cafe</option>
+				<option value="3">Bakery, Dessert Parlor</option>
+				<option value="4">Bakery, Food Court</option>
+				<option value="5">Bakery, Quick Bites</option>
+				<option value="6">Bar</option>
+				<option value="7">Bar, Casual Dining</option>
+				<option value="8">Bar, Lounge</option>
+				<option value="9">Bar, Pub</option>
+				<option value="10">Bar, Quick Bites</option>
+				<option value="11">Beverage Shop</option>
+				<option value="12">Beverage Shop, Cafe</option>
+				<option value="13">Beverage Shop, Dessert Parlor</option>
+				<option value="14">Beverage Shop, Quick Bites</option>
+				<option value="15">Bhojanalya</option>
+				<option value="16">Cafe</option>
+				<option value="17">Cafe, Bakery</option>
+				<option value="18">Cafe, Bar</option>
+				<option value="19">Cafe, Casual Dining</option>
+				<option value="20">Cafe, Dessert Parlor</option>
+				<option value="21">Cafe, Food Court</option>
+				<option value="22">Cafe, Lounge</option>
+				<option value="23">Cafe, Quick Bites</option>
+				<option value="24">Casual Dining</option>
+				<option value="25">Casual Dining, Bar</option>
+				<option value="26">Casual Dining, Cafe</option>
+				<option value="27">Casual Dining, Irani Cafee</option>
+				<option value="28">Casual Dining, Lounge</option>
+				<option value="29">Casual Dining, Microbrewery</option>
+				<option value="30">Casual Dining, Pub</option>
+				<option value="31">Casual Dining, Quick Bites</option>
+				<option value="32">Casual Dining, Sweet Shop</option>
+				<option value="33">Club</option>
+				<option value="34">Club, Casual Dining</option>
+				<option value="35">Confectionery</option>
+				<option value="36">Delivery</option>
+				<option value="37">Dessert Parlor</option>
+				<option value="38">Dessert Parlor, Bakery</option>
+				<option value="39">Dessert Parlor, Beverage Shop</option>
+				<option value="40">Dessert Parlor, Cafe</option>
+				<option value="41">Dessert Parlor, Food Court</option>
+				<option value="42">Dessert Parlor, Kiosk</option>
+				<option value="43">Dessert Parlor, Quick Bites</option>
+				<option value="44">Dessert Parlor, Sweet Shop</option>
+				<option value="45">Dhaba</option>
+				<option value="46">Fine Dining</option>
+				<option value="47">Fine Dining, Bar</option>
+				<option value="48">Fine Dining, Lounge</option>
+				<option value="49">Fine Dining, Microbrewery</option>
+				<option value="50">Food Court</option>
+				<option value="51">Food Court, Beverage Shop</option>
+				<option value="52">Food Court, Casual Dining</option>
+				<option value="53">Food Court, Dessert Parlor</option>
+				<option value="54">Food Court, Quick Bites</option>
+				<option value="55">Food Truck</option>
+				<option value="56">Kiosk</option>
+				<option value="57">Lounge</option>
+				<option value="58">Lounge, Bar</option>
+				<option value="59">Lounge, Cafe</option>
+				<option value="60">Lounge, Casual Dining</option>
+				<option value="61">Lounge, Microbrewery</option>
+				<option value="62">Mess</option>
+				<option value="63">Microbrewery</option>
+				<option value="64">Microbrewery, Bar</option>
+				<option value="65">Microbrewery, Casual Dining</option>
+				<option value="66">Microbrewery, Lounge</option>
+				<option value="67">Microbrewery, Pub</option>
+				<option value="68">Pub</option>
+				<option value="69">Pub, Bar</option>
+				<option value="70">Pub, Cafe</option>
+				<option value="71">Pub, Casual Dining</option>
+				<option value="72">Pub, Microbrewery</option>
+				<option value="73">Quick Bites</option>
+				<option value="74">Quick Bites, Bakery</option>
+				<option value="75">Quick Bites, Beverage Shop</option>
+				<option value="76">Quick Bites, Cafe</option>
+				<option value="77">Quick Bites, Dessert Parlor</option>
+				<option value="78">Quick Bites, Food Court</option>
+				<option value="79">Quick Bites, Kiosk</option>
+				<option value="80">Quick Bites, Meat Shop</option>
+				<option value="81">Quick Bites, Mess</option>
+				<option value="82">Quick Bites, Sweet Shop</option>
+				<option value="83">Sweet Shop</option>
+				<option value="84">Sweet Shop, Quick Bites</option>
+				<option value="85">Takeaway</option>
+				<option value="86">Takeaway, Delivery</option>
+			</select>
+			</div>
+			<div class="field">
+		        <h3><label for="rainfall">Votes</label></h3>
+		        <input id="votes" name="votes" val="" type="text">
+		    </div>
+		    <div class="field">
+              <label class="doctor-state">Cuisine</label>
+              <select class="ui search dropdown"  name="cuisine">
+		    	<option value="0">North Indian</option>
+				<option value="1"> Mughlai</option>
+				<option value="2"> Chinese</option>
+				<option value="3">Chinese</option>
+				<option value="4"> North Indian</option>
+				<option value="5"> Thai</option>
+				<option value="6">Cafe</option>
+				<option value="7"> Mexican</option>
+				<option value="8"> Italian</option>
+				<option value="9">South Indian</option>
+				<option value="10"> Rajasthani</option>
+				<option value="11"> South Indian</option>
+				<option value="12"> Andhra</option>
+				<option value="13">Pizza</option>
+				<option value="14"> Cafe</option>
+				<option value="15"> Continental</option>
+				<option value="16"> Momos</option>
+				<option value="17"> Beverages</option>
+				<option value="18"> Fast Food</option>
+				<option value="19"> American</option>
+				<option value="20"> French</option>
+				<option value="21"> Pizza</option>
+				<option value="22">Italian</option>
+				<option value="23"> European</option>
+				<option value="24"> Bakery</option>
+				<option value="25"> Burger</option>
+				<option value="26">Bakery</option>
+				<option value="27"> Desserts</option>
+				<option value="28"> Biryani</option>
+				<option value="29">Biryani</option>
+				<option value="30">Street Food</option>
+				<option value="31">Burger</option>
+				<option value="32"> Rolls</option>
+				<option value="33">Fast Food</option>
+				<option value="34"> Street Food</option>
+				<option value="35">Ice Cream</option>
+				<option value="36">Healthy Food</option>
+				<option value="37"> Salad</option>
+				<option value="38">Asian</option>
+				<option value="39"> Korean</option>
+				<option value="40"> Indonesian</option>
+				<option value="41"> Japanese</option>
+				<option value="42">Desserts</option>
+				<option value="43">Goan</option>
+				<option value="44"> Seafood</option>
+				<option value="45"> Kebab</option>
+				<option value="46">Continental</option>
+				<option value="47"> Steak</option>
+				<option value="48">Seafood</option>
+				<option value="49">Beverages</option>
+				<option value="50"> Ice Cream</option>
+				<option value="51">Mithai</option>
+				<option value="52"> Iranian</option>
+				<option value="53"> Sandwich</option>
+				<option value="54">Sandwich</option>
+				<option value="55">Mangalorean</option>
+				<option value="56"> Juices</option>
+				<option value="57"> Mithai</option>
+				<option value="58">Thai</option>
+				<option value="59"> Vietnamese</option>
+				<option value="60"> Asian</option>
+				<option value="61">Salad</option>
+				<option value="62"> Healthy Food</option>
+				<option value="63"> Hyderabadi</option>
+				<option value="64">Bengali</option>
+				<option value="65">Arabian</option>
+				<option value="66">BBQ</option>
+				<option value="67"> Arabian</option>
+				<option value="68"> BBQ</option>
+				<option value="69">Vietnamese</option>
+				<option value="70">Andhra</option>
+				<option value="71"> Mangalorean</option>
+				<option value="72"> Tea</option>
+				<option value="73">Juices</option>
+				<option value="74"> Afghani</option>
+				<option value="75">Mexican</option>
+				<option value="76">Rolls</option>
+				<option value="77"> Lebanese</option>
+				<option value="78"> Finger Food</option>
+				<option value="79">Tibetan</option>
+				<option value="80">Tea</option>
+				<option value="81">Momos</option>
+				<option value="82"> Tibetan</option>
+				<option value="83"> Charcoal Chicken</option>
+				<option value="84">Hyderabadi</option>
+				<option value="85">Finger Food</option>
+				<option value="86">Mughlai</option>
+				<option value="87">Kebab</option>
+				<option value="88"> Middle Eastern</option>
+				<option value="89"> Mediterranean</option>
+				<option value="90"> Wraps</option>
+				<option value="91">Kerala</option>
+				<option value="92"> Kerala</option>
+				<option value="93">Oriya</option>
+				<option value="94"> Bihari</option>
+				<option value="95"> Roast Chicken</option>
+				<option value="96">Maharashtrian</option>
+				<option value="97">Bohri</option>
+				<option value="98">African</option>
+				<option value="99">American</option>
+				<option value="100"> Bengali</option>
+				<option value="101">Rajasthani</option>
+				<option value="102"> Nepalese</option>
+				<option value="103">Turkish</option>
+				<option value="104">Tamil</option>
+				<option value="105"> Tex-Mex</option>
+				<option value="106"> Belgian</option>
+				<option value="107"> Gujarati</option>
+				<option value="108">Roast Chicken</option>
+				<option value="109">Gujarati</option>
+				<option value="110">South American</option>
+				<option value="111"> Oriya</option>
+				<option value="112">Konkan</option>
+				<option value="113">European</option>
+				<option value="114"> Chettinad</option>
+				<option value="115"> Coffee</option>
+				<option value="116"> Turkish</option>
+				<option value="117"> Indian</option>
+				<option value="118"> Maharashtrian</option>
+				<option value="119">Lebanese</option>
+				<option value="120"> Afghan</option>
+				<option value="121"> Modern Indian</option>
+				<option value="122"> Goan</option>
+				<option value="123"> Lucknowi</option>
+				<option value="124">Japanese</option>
+				<option value="125">Modern Indian</option>
+				<option value="126">Bihari</option>
+				<option value="127">Australian</option>
+				<option value="128">Mediterranean</option>
+				<option value="129">Spanish</option>
+				<option value="130"> Malaysian</option>
+				<option value="131"> Burmese</option>
+				<option value="132"> Sushi</option>
+				<option value="133">Portuguese</option>
+				<option value="134"> African</option>
+				<option value="135">Parsi</option>
+				<option value="136">Steak</option>
+				<option value="137">Nepalese</option>
+				<option value="138"> Greek</option>
+				<option value="139">Burmese</option>
+				<option value="140">North Eastern</option>
+				<option value="141">Chettinad</option>
+				<option value="142"> Bar Food</option>
+				<option value="143"> Konkan</option>
+				<option value="144"> Spanish</option>
+				<option value="145"> Singaporean</option>
+				<option value="146">Awadhi</option>
+				<option value="147"> Naga</option>
+				<option value="148">Korean</option>
+				<option value="149"> Cantonese</option>
+				<option value="150">Malaysian</option>
+				<option value="151"> Grill</option>
+				<option value="152">Sushi</option>
+				<option value="153"> Bubble Tea</option>
+				<option value="154">Lucknowi</option>
+				<option value="155"> Hot dogs</option>
+				<option value="156">Kashmiri</option>
+				<option value="157">French</option>
+				<option value="158"> Assamese</option>
+				<option value="159"> Awadhi</option>
+				<option value="160">Assamese</option>
+				<option value="161">Coffee</option>
+				<option value="162"> Sri Lankan</option>
+				<option value="163"> Mongolian</option>
+				<option value="164"> Parsi</option>
+				<option value="165">Charcoal Chicken</option>
+				<option value="166"> North Eastern</option>
+				<option value="167">Bar Food</option>
+				<option value="168"> British</option>
+				<option value="169">Singaporean</option>
+				<option value="170">Middle Eastern</option>
+				<option value="171">Naga</option>
+				<option value="172"> Pan Asian</option>
+				<option value="173"> Paan</option>
+				<option value="174"> German</option>
+				<option value="175"> Kashmiri</option>
+				<option value="176">Russian</option>
+				<option value="177">Drinks Only</option>
+				<option value="178"> Drinks Only</option>
+				<option value="179"> Jewish</option>
+				<option value="180"> Vegan</option>
+				<option value="181">Iranian</option>
+				<option value="182"> Raw Meats</option>
+				<option value="183"> Sindhi</option>
+				<option value="184">German</option>
+				<option value="185"> South American</option>
+				<option value="186">British</option>
+		    </select>
+			</div>
+		</div>
+		<button class="tech-submit btn btn-light btn-outline" type="submit" href="/final">submit</button>
+	</form>
+	<p style="color:black"> Staff(Doctors,Nurses,Pharmacists): {{result}} </p>
+</body>
+</html>
