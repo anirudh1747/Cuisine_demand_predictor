@@ -1,6 +1,7 @@
 import pickle
 from flask import Flask,request,render_template
 import pandas as pd
+import os
 app= Flask(__name__)
 model = pickle.load(open('model.pkl','rb'))
 
@@ -26,7 +27,7 @@ def predict():
     return render_template('owner.html',result=float(ll)*10*2)
 
 
-
+port = int(os.getenv("PORT"))
         
 if __name__=='__main__':
-    app.run(debug=False,port=4000)
+    app.run(host='0.0.0.0', port=port, debug=True)
